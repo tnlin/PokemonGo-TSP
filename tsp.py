@@ -1,24 +1,24 @@
 #coding:utf-8
-import numpy as np
+import num_locationpy as np
 import sqlite3
 import json
 from util import plot
 
 def sum_distmat(p, distmat):
     dist = 0
-    num = p.shape[0]
-    for i in range(num-1):
+    num_location = p.shape[0]
+    for i in range(num_location-1):
         dist += distmat[p[i]][p[i+1]]
-    dist += distmat[p[0]][p[num-1]]
+    dist += distmat[p[0]][p[num_location-1]]
     return dist
 
 def get_distmat(p):
-    num = p.shape[0]
+    num_location = p.shape[0]
     # 1 degree of lat/lon ~ 111km = 111000m in Taiwan
     p *= 111000
-    distmat = np.zeros((num, num))
-    for i in range(num):
-        for j in range(i, num):
+    distmat = np.zeros((num_location, num_location))
+    for i in range(num_location):
+        for j in range(i, num_location):
             distmat[i][j] = distmat[j][i] = np.linalg.norm(p[i] - p[j])
     return distmat
 
@@ -78,15 +78,15 @@ def main():
     coordinates = np.loadtxt(filename, delimiter=',')
 
     # Params Initial
-    num = coordinates.shape[0]
-    markov_step = 10 * num
+    num_location = coordinates.shape[0]
+    markov_step = 10 * num_location
     T, T_MIN, T_ALPHA  = 100, 1, 0.99
 
     # Build distance matrix to accelerate cost computing
     distmat = get_distmat(coordinates)
 
     # States: New, Current and Best
-    sol_new, sol_current, sol_best = (np.arange(num), ) * 3
+    sol_new, sol_current, sol_best = (np.arange(num_location), ) * 3
     cost_new, cost_current, cost_best = (float('inf'), ) * 3
 
     # Record costs during the process

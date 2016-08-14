@@ -31,16 +31,16 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 ### Annealing parameters
 
-    markov_step = 10 * num	# 內循環次數
-    T = 100					# 初始溫度
-    T = 1					# 最低溫度
-    T_ALPHA = 0.99			# 退溫常數
+    markov_step = 10 * num_location	# 內循環次數
+    T = 100					        # 初始溫度
+    T = 1					        # 最低溫度
+    T_ALPHA = 0.99			        # 退溫常數
 
 因為是隨機搜尋演算法，不一定能保證每次都得到最佳解答
 
 如果想要得到更好的解，增加markov_step是個好辦法
 
-	markov_step = 100 * num # 內循環次數
+    markov_step = 100 * num_location # 內循環次數
 	
 ### Execute
 直接執行`python tsp.py`, 預設會讀取`data/pokestops.csv`
