@@ -5,9 +5,13 @@ def plot(path, points, costs):
     '''
     path: List of the different orders in which the nodes are visited
     points: coordinates for the different nodes
+    costs: Cost of each iteration
     '''
-    plt.figure(figsize=(15,6))
 
+    plt.figure(figsize=(15,6))
+    '''
+    Plot Cost Function
+    '''
     plt.subplot(121)
     curve, = plt.plot(np.array(costs), label='Distance(m)')
     plt.ylabel("Distance")
@@ -16,6 +20,10 @@ def plot(path, points, costs):
     plt.legend()
     plt.title("Final Distance: " + str(costs[-1]))
 
+
+    '''
+    Plot TSP Route
+    '''
     plt.subplot(122)
     # Transform back to longitude/latitude
     points = (points / 111000).tolist()
@@ -39,7 +47,7 @@ def plot(path, points, costs):
     ax.xaxis.set_major_formatter(FormatStrFormatter('%.3f'))
     ax.yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
 
-    # Set axis too slitghtly larger than the set of x and y
+    # Set axis too slightly larger than the set of x and y
     plt.xlim(min(x)*0.99999, max(x)*1.00001)
     plt.ylim(min(y)*0.99999, max(y)*1.00001)
     plt.xlabel("Longitude")
@@ -48,5 +56,4 @@ def plot(path, points, costs):
     plt.grid(True)
     plt.legend()
     plt.show()
-
 
