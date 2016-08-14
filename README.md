@@ -1,10 +1,10 @@
 # PokemonGo-TSP
-最近被滑鐵盧大學分享的一篇PokemonGo最佳路徑規劃文章 [[1]](#Reference) 而啟發
+最近被滑鐵盧大學分享的一篇PokemonGo最佳路徑規劃文章 [[1]](http://www.math.uwaterloo.ca/tsp/poke/index.html) 而啟發
 
 剛好最近又很瘋PokemonGo，決定試著動手用模擬退火來解決PokemonGo的TSP問題
 
 ## What is TSP?
-TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[2](#Reference)
+TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[[2]](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 
 給定一系列城市和每對城市之間的距離，求解訪問每一座城市一次並回到起始城市的最短迴路
 
@@ -13,7 +13,7 @@ TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[2](#
 ![image](https://upload.wikimedia.org/wikipedia/commons/2/2b/Bruteforce.gif)
  
 ## What is SA?
-SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](#Reference) [[4]](#Reference)
+SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.wikipedia.org/wiki/Simulated_annealing) [[4]](http://blog.csdn.net/lalor/article/details/7688329)
 
 一種基於熱力學原理的隨機搜尋演算法，用來在固定時間內在一個大的搜尋空間內找最優解
 
