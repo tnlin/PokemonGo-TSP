@@ -71,7 +71,8 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 ## TODO
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
-- [ ] Link result to Google Map
+- [ ] 考慮雷達半徑(50m)和5分鐘重置的條件，計算出最佳路線
+- [ ] 將最佳路徑Link到Google Map上
 - [ ] Parallelization 
 - [ ] Reannealing
 - [ ] Cooling schedule
