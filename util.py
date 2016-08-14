@@ -126,6 +126,5 @@ def plot(path, points, costs):
     plt.ylabel("Lantitude")
     plt.title("TSP Route Visualization")
     plt.grid(True)
-    plt.legend()
     plt.show()
 
