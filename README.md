@@ -35,6 +35,9 @@ numpy==1.11.1, python2/3的環境下皆可運行
     T = 100					# 初始溫度
     T = 1					# 最低溫度
     T_ALPHA = 0.99			# 退溫常數
+
+因為是隨機搜尋演算法，不一定能保證每次都得到最佳解答
+
 如果想要得到更好的解，增加markov_step是個好辦法
 
 	markov_step = 100 * num # 內循環次數
@@ -73,11 +76,9 @@ numpy==1.11.1, python2/3的環境下皆可運行
 - [ ] Reannealing
 - [ ] Cooling schedule
 
-目前只實現了Geometric TSP，Road TSP 還在克服中
+目前只實現了Geometric TSP，Road TSP [[5]](http://www.math.uwaterloo.ca/tsp/college/index.html) 還在克服中
 
-用Google Map API 來計算實際地理距離目前還有點雷
-
-像是操場/壘球場這種地方會繞一大圈而不是直接穿越
+用Google Map API 來計算實際地理距離目前還有點雷，像是操場/壘球場這種地方會繞一大圈而不是直接穿越
 
 希望有經驗的大大能夠提出建議！ 謝謝
 
@@ -93,4 +94,4 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 [5] [Queen of College Tours](http://www.math.uwaterloo.ca/tsp/college/index.html) - 從Geometric TSP 到 Road TSP
 
-[6] [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) - 地圖掃描工具，開啟後放置一段時間，再把pogom.db拿出來，即可取得道館/補給站座標
+[6] [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) - 地圖掃描工具，開啟後放置一段時間，再把`pogom.db`拿出來，即可取得道館/補給站座標
