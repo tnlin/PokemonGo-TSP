@@ -8,9 +8,9 @@
 ### Requirement
 `pip install sqlite3 numpy`
 
-`pip freeze | grep numpy`  --  numpy==1.11.1
+`pip freeze | grep numpy`
 
-在Python3/2的環境下皆可運行
+numpy==1.11.1, python2/3的環境下皆可運行
 
 
 ### Annealing parameters
