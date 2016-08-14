@@ -70,8 +70,8 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 
 ## TODO
-- [ ] Road TSP(結合Google Map根據實際地理距離來計算)
-- [ ] Link to result to Google Map
+- [ ] Road TSP (結合Google Map根據實際地理距離來計算)
+- [ ] Link result to Google Map
 - [ ] Parallelization 
 - [ ] Reannealing
 - [ ] Cooling schedule
