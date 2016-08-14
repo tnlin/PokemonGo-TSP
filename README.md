@@ -3,6 +3,22 @@
 
 剛好最近又很瘋PokemonGo，決定試著動手用模擬退火來解決PokemonGo的TSP問題
 
+## What is TSP?
+TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[2](#Reference)
+
+給定一系列城市和每對城市之間的距離，求解訪問每一座城市一次並回到起始城市的最短迴路
+
+在 Computer Science 內屬於NP Hard的難題
+
+![image](https://upload.wikimedia.org/wikipedia/commons/2/2b/Bruteforce.gif)
+ 
+## What is SA?
+SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](#Reference) [[4]](#Reference)
+
+一種基於熱力學原理的隨機搜尋演算法，用來在固定時間內在一個大的搜尋空間內找最優解
+
+ ![image](https://upload.wikimedia.org/wikipedia/commons/d/d5/Hill_Climbing_with_Simulated_Annealing.gif)
+
 
 ## Quick Start
 ### Requirement
@@ -48,25 +64,6 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 
  ![image](http://i.imgur.com/GqmAOl3.png)
-
-
-
-
-## What is TSP?
-TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[2](#Reference)
-
-給定一系列城市和每對城市之間的距離，求解訪問每一座城市一次並回到起始城市的最短迴路
-
-在 Computer Science 內屬於NP Hard的難題
-
-![image](https://upload.wikimedia.org/wikipedia/commons/2/2b/Bruteforce.gif)
- 
-## What is SA?
-SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](#Reference) [[4]](#Reference)
-
-一種基於熱力學原理的隨機搜尋演算法，用來在固定時間內在一個大的搜尋空間內找最優解
-
- ![image](https://upload.wikimedia.org/wikipedia/commons/d/d5/Hill_Climbing_with_Simulated_Annealing.gif)
 
 
 ## TODO
