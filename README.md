@@ -35,7 +35,6 @@ pip install -r requirements.txt
 Mac OSX:
 pip install matplotlib
 pip install -r requirements.txt
-
 ```
 
 
@@ -46,7 +45,6 @@ markov_step = 10 * num_location	# 內循環次數
 T = 100					        # 初始溫度
 T = 1					        # 最低溫度
 T_ALPHA = 0.99			        # 退溫常數
-
 ```
 
 因為是隨機搜尋演算法，不一定能保證每次都得到最佳解答
@@ -55,7 +53,6 @@ T_ALPHA = 0.99			        # 退溫常數
 
 ```
 markov_step = 100 * num_location # 內循環次數
-
 ```
 
 ### Execute
@@ -74,16 +71,13 @@ markov_step = 100 * num_location # 內循環次數
 等跑完後最後再去sqlite看數據即可
 
 
-
 ### Google Map Visualization
 
 附上一張交大校內[Pokemon Stop的最佳路規劃](https://www.google.com/maps/d/edit?mid=1lLYI5pnaxiFfFOcAQ45-Foeg-Jg)
 
 目前是人工手拉的地圖，希望未來能夠自動整合到地圖上QQ
 
-
  ![image](http://i.imgur.com/GqmAOl3.png)
-
 
 ## TODO
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
@@ -93,7 +87,6 @@ markov_step = 100 * num_location # 內循環次數
 - [ ] Parallelization 
 - [ ] Reannealing
 - [ ] Cooling schedule
-
 
 目前只實現了Geometric TSP，Road TSP [[5]](http://www.math.uwaterloo.ca/tsp/college/index.html) 還在克服中
 
