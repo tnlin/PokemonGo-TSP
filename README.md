@@ -22,11 +22,21 @@ SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.
 
 ## Usage 
 ### Requirement
-`pip install sqlite3 numpy`
 
-`pip freeze | grep numpy`
+```
+Linux ( Debian / Ubuntu ):
+apt-get install python-matplotlib
+pip install -r requirements.txt
 
-numpy==1.11.1, python2/3的環境下皆可運行
+Linux ( Fedora / Redhat ):
+yum install python-matplotlib
+pip install -r requirements.txt
+
+Mac OSX:
+pip install matplotlib
+pip install -r requirements.txt
+
+```
 
 
 ### Annealing parameters
