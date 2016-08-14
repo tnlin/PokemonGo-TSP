@@ -52,8 +52,7 @@ def main():
         T *= T_ALPHA
         costs.append(cost_best)
         # Monitor the temperature & cost
-        print("Temperature:", "%.2f" % round(T, 2),\
-                " Distance:", "%.2f" % round(cost_best, 2))
+        print("Temperature:", "%.2f°C" % round(T, 2), " Distance:", "%.2fm" % round(cost_best, 2))
 
     # Show final cost & route
     print("Final Distance:", round(costs[-1], 2))
