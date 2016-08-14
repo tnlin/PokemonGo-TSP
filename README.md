@@ -3,6 +3,7 @@
 
 剛好最近又很瘋PokemonGo，決定試著動手用模擬退火來解決PokemonGo的TSP問題
 
+
 ## Quick Start
 ### Requirement
 `pip install sqlite3 numpy`
@@ -45,6 +46,7 @@
 
 目前是人工手拉的地圖，希望未來能夠自動整合到地圖上QQ
 
+
  ![image](http://i.imgur.com/GqmAOl3.png)
 
 
@@ -68,11 +70,19 @@ SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](#Reference)
 
 
 ## TODO
+- [ ] Road TSP(結合Google Map根據實際地理距離來計算)
 - [ ] Link to result to Google Map
 - [ ] Parallelization 
 - [ ] Reannealing
 - [ ] Cooling schedule
 
+目前只實現了Geometric TSP，Road TSP 還在克服中
+
+用Google Map API 來計算實際地理距離目前還有點雷
+
+像是操場/壘球場這種地方會繞一大圈而不是直接穿越
+
+希望有經驗的大大能夠提出建議！ 謝謝
 
 
 ## Reference
