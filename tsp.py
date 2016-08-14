@@ -122,10 +122,11 @@ def main():
         T *= T_ALPHA
         costs.append(cost_best)
         # Monitor the temperature & cost
-        print(T, cost_best)
+        print("Temperature:", T,", Distance:",cost_best)
 
     # Show final cost & route
-    print(costs[-1], sol_best)
+    print("Final Distance:", costs[-1])
+    print("Best Route", sol_best)
 
     route = json.dumps(sol_best.tolist())
     payloads = [ costs[-1], route, markov_step ]
