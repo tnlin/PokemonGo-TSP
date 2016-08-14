@@ -105,6 +105,7 @@ def main():
             else:
                 sol_new = transpose(sol_new)
 
+            # Get the total distance of new route
             cost_new = sum_distmat(sol_new, distmat)
 
             if accept(cost_new, cost_current, T):
