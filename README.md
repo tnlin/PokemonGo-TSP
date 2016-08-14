@@ -8,7 +8,7 @@ TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[[2]]
 
 給定一系列城市和每對城市之間的距離，求解訪問每一座城市一次並回到起始城市的最短迴路
 
-在 Computer Science 內屬於NP Hard的難題
+在計算複雜度(Computing Complexity)上 屬於NP-Complete的難題
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/2/2b/Bruteforce.gif)
  
@@ -73,9 +73,11 @@ numpy==1.11.1, python2/3的環境下皆可運行
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
 - [ ] 考慮雷達半徑(50m)和5分鐘重置的條件，計算出最佳路線
 - [ ] 將最佳路徑Link到Google Map上
+- [ ] Benchmark with other algorithms
 - [ ] Parallelization 
 - [ ] Reannealing
 - [ ] Cooling schedule
+
 
 目前只實現了Geometric TSP，Road TSP [[5]](http://www.math.uwaterloo.ca/tsp/college/index.html) 還在克服中
 
