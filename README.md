@@ -20,7 +20,7 @@ SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.
  ![image](https://upload.wikimedia.org/wikipedia/commons/d/d5/Hill_Climbing_with_Simulated_Annealing.gif)
 
 
-## Quick Start
+## Usage 
 ### Requirement
 `pip install sqlite3 numpy`
 
