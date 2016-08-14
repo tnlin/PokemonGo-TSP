@@ -18,8 +18,8 @@ def plot(path, points, costs):
     plt.xlabel("Iteration")
     plt.grid(True)
     plt.legend()
-    plt.title("Final Distance: " + str(costs[-1]))
-
+    cost =  str("%.2f" % round(costs[-1], 2))
+    plt.title("Final Distance: " + cost)
 
     '''
     Plot TSP Route
