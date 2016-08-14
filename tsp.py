@@ -87,7 +87,7 @@ def main():
 
     # States: New, Current and Best
     sol_new, sol_current, sol_best = (np.arange(num), ) * 3
-    cost_new, cost_current, cost_best = (np.max, ) * 3
+    cost_new, cost_current, cost_best = (float('inf'), ) * 3
 
     # Record costs during the process
     costs = []
