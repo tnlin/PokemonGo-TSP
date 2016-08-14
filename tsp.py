@@ -65,7 +65,7 @@ def accept(cost_new, cost_current, T):
              np.random.rand() < np.exp(-(cost_new - cost_current) / T) )
 
 def save_sqlite(payloads):
-    conn = sqlite3.connect('data/tsp.sqlite')
+    conn = sqlite3.connect('data/tsp.db')
     c = conn.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS TSP (costs REAL, route TEXT, markov_step INTEGER) ")
     c.execute('INSERT INTO TSP VALUES (?,?,?)' , payloads)
@@ -123,10 +123,11 @@ def main():
         T *= T_ALPHA
         costs.append(cost_best)
         # Monitor the temperature & cost
-        print("Temperature:", T,", Distance:",cost_best)
+        print("Temperature:", "%.2f" % round(T, 2),\
+                " Distance:", "%.2f" % round(cost_best, 2))
 
     # Show final cost & route
-    print("Final Distance:", costs[-1])
+    print("Final Distance:", round(costs[-1], 2))
     print("Best Route", sol_best)
 
     route = json.dumps(sol_best.tolist())

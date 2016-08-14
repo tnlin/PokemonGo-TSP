@@ -49,7 +49,7 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 ![image](http://i.imgur.com/GoZRbzt.png")
 
-最後再把結果存入`data/tsp.sqlite`內，方便未來分析
+最後再把結果存入`data/tsp.db`內，方便未來分析
 
 推薦下載 [Sqlite Browser](http://sqlitebrowser.org/) GUI管理工具來開啟資料庫
 
