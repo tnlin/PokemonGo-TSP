@@ -1,64 +1,8 @@
 #coding:utf-8
 import numpy as np
-import matplotlib.pyplot as plt
 import sqlite3
 import json
-from matplotlib.ticker import ScalarFormatter, FormatStrFormatter
-
-def save_sqlite(payloads):
-    conn = sqlite3.connect('data/tsp.sqlite')
-    c = conn.cursor()
-    c.execute("CREATE TABLE IF NOT EXISTS TSP (costs REAL, route TEXT, markov_step INTEGER) ")
-    c.execute('INSERT INTO TSP VALUES (?,?,?)' , payloads)
-    conn.commit()
-    conn.close()
-
-def plot(path, points, costs):
-    '''
-    path: List of the different orders in which the nodes are visited
-    points: coordinates for the different nodes
-    '''
-    plt.figure(figsize=(15,6))
-
-    plt.subplot(121)
-    plt.plot(np.array(costs))
-    plt.ylabel("Cost")
-    plt.xlabel("Iteration")
-    plt.title("Total Cost: " + str(costs[-1]))
-
-
-    plt.subplot(122)
-    points = (points / 111000).tolist()
-
-    # Unpack the primary path and transform it into a list of ordered coordinates
-    x = []; y = []
-    for i in path:
-        x.append(points[i][1])
-        y.append(points[i][0])
-    x.append(points[path[0]][1])
-    y.append(points[path[0]][0])
-
-    # Plot line
-    plt.plot(x, y, 'c-')
-
-    # Plot dot
-    plt.plot(x, y, 'bo')
-
-    # Avoid scientific notation
-    ax = plt.gca()
-    ax.xaxis.set_major_formatter(FormatStrFormatter('%.3f'))
-    ax.yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
-
-    # Add grid
-    ax.grid(True)
-
-    # Set axis too slitghtly larger than the set of x and y
-    plt.xlim(min(x)*0.99999, max(x)*1.00001)
-    plt.ylim(min(y)*0.99999, max(y)*1.00001)
-    plt.xlabel("Longitude")
-    plt.ylabel("Lantitude")
-    plt.title("TSP Route Visualization")
-    plt.show()
+from util import plot
 
 def sum_distmat(p, distmat):
     dist = 0
@@ -70,7 +14,7 @@ def sum_distmat(p, distmat):
 
 def get_distmat(p):
     num = p.shape[0]
-    # 1 degree of lan/lon ~ 111km = 111000m in Taiwan
+    # 1 degree of lat/lon ~ 111km = 111000m in Taiwan
     p *= 111000
     distmat = np.zeros((num, num))
     for i in range(num):
@@ -119,6 +63,15 @@ def accept(cost_new, cost_current, T):
     # P(dE) = exp(dE/(kT)), defined by thermodynamics
     return ( cost_new < cost_current or
              np.random.rand() < np.exp(-(cost_new - cost_current) / T) )
+
+def save_sqlite(payloads):
+    conn = sqlite3.connect('data/tsp.sqlite')
+    c = conn.cursor()
+    c.execute("CREATE TABLE IF NOT EXISTS TSP (costs REAL, route TEXT, markov_step INTEGER) ")
+    c.execute('INSERT INTO TSP VALUES (?,?,?)' , payloads)
+    conn.commit()
+    conn.close()
+
 
 def main():
     filename = "data/pokestops.csv"
