@@ -1,5 +1,5 @@
 #coding:utf-8
-import num_locationpy as np
+import numpy as np
 import sqlite3
 import json
 from util import plot
