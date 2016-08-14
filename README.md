@@ -41,17 +41,23 @@ pip install -r requirements.txt
 
 ### Annealing parameters
 
-    markov_step = 10 * num_location	# 內循環次數
-    T = 100					        # 初始溫度
-    T = 1					        # 最低溫度
-    T_ALPHA = 0.99			        # 退溫常數
+```
+markov_step = 10 * num_location	# 內循環次數
+T = 100					        # 初始溫度
+T = 1					        # 最低溫度
+T_ALPHA = 0.99			        # 退溫常數
+
+```
 
 因為是隨機搜尋演算法，不一定能保證每次都得到最佳解答
 
 如果想要得到更好的解，增加markov_step是個好辦法
 
-    markov_step = 100 * num_location # 內循環次數
-	
+```
+markov_step = 100 * num_location # 內循環次數
+
+```
+
 ### Execute
 直接執行`python tsp.py`, 預設會讀取`data/pokestops.csv`
 
@@ -63,7 +69,7 @@ pip install -r requirements.txt
 
 推薦下載 [Sqlite Browser](http://sqlitebrowser.org/) GUI管理工具來開啟資料庫
 
-個人都是下四次 `python tsp.py & ` 放到背景去執行，然後去做自己的事情
+個人都是跑N次 `python tsp.py & ` 放到背景去執行，然後去做自己的事情
 
 等跑完後最後再去sqlite看數據即可
 
