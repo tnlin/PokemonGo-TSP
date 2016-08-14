@@ -3,7 +3,7 @@ import numpy as np
 import json
 from util import *
 def main():
-    filename = "data/pokestops.csv"
+    filename = "data/nctu.csv"
     coordinates = np.loadtxt(filename, delimiter=',')
 
     # Params Initial
