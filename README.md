@@ -56,7 +56,7 @@ markov_step = 100 * num_location # 內循環次數
 ```
 
 ### Execute
-直接執行`python tsp.py`, 預設會讀取`data/pokestops.csv`
+直接執行`python tsp.py`, 預設會讀取`data/nctu.csv`
 
 跑出結果後會畫出cost function和route, 結果如下
 
