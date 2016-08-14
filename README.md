@@ -83,6 +83,7 @@ numpy==1.11.1, python2/3的環境下皆可運行
 
 希望有經驗的大大能夠提出建議！ 謝謝
 
+歡迎PR!! 
 
 ## Reference
 [1] [Pokemon Go Traveling Salesman Problem](http://www.math.uwaterloo.ca/tsp/poke/index.html) - 國外的Pokemon Go TSP
