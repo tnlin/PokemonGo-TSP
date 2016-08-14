@@ -33,6 +33,12 @@
 
 推薦下載 [Sqlite Browser](http://sqlitebrowser.org/) GUI管理工具來開啟資料庫
 
+個人都是下四次 `python tsp.py & ` 放到背景去執行，然後去做自己的事情
+
+等跑完後最後再去sqlite看數據即可
+
+
+
 ### Google Map Visualization
 
 附上一張交大校內[Pokemon Stop的最佳路規劃](https://www.google.com/maps/d/edit?mid=1lLYI5pnaxiFfFOcAQ45-Foeg-Jg)
@@ -80,4 +86,4 @@ SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](#Reference)
 
 [5] [Queen of College Tours](http://www.math.uwaterloo.ca/tsp/college/index.html) - 從Geometric TSP 到 Road TSP
 
-[6] [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) - 地圖掃描工具，從pogom.db獲取道館/補給站座標
+[6] [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) - 地圖掃描工具，開啟後放置一段時間，再把pogom.db拿出來，即可取得道館/補給站座標
