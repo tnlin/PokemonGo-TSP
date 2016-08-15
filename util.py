@@ -59,7 +59,7 @@ def transpose(sol_new):
 def accept(cost_new, cost_current, T):
     # If new cost better than current, accept it
     # If new cost not better than current, accept it by probability P(dE)
-    # P(dE) = exp(dE/(kT)), defined by thermodynamics
+    # P(dE) = exp(dE/(kT)), defined by Metropolis
     return ( cost_new < cost_current or
              np.random.rand() < np.exp(-(cost_new - cost_current) / T) )
 
@@ -80,7 +80,9 @@ def plot(path, points, costs):
     costs: Cost of each iteration
     '''
 
+    # Change figure size
     plt.figure(figsize=(15,6))
+
     '''
     Plot Cost Function
     '''
@@ -123,7 +125,7 @@ def plot(path, points, costs):
     plt.xlim(min(x)*0.99999, max(x)*1.00001)
     plt.ylim(min(y)*0.99999, max(y)*1.00001)
     plt.xlabel("Longitude")
-    plt.ylabel("Lantitude")
+    plt.ylabel("Latitude")
     plt.title("TSP Route Visualization")
     plt.grid(True)
     plt.show()
