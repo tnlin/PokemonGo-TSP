@@ -5,9 +5,9 @@ from util import *
 from export import *
 
 def main():
-    #filename = "data/nctu.csv"
+    filename = "data/nctu.csv"
     #filename = "data/nthu.csv"
-    filename = "data/thu.csv"
+    #filename = "data/thu.csv"
     coordinates = np.loadtxt(filename, delimiter=',')
 
     # Params Initial
