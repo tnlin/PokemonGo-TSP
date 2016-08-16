@@ -2,8 +2,12 @@
 import numpy as np
 import json
 from util import *
+from export import *
+
 def main():
-    filename = "data/nctu.csv"
+    #filename = "data/nctu.csv"
+    #filename = "data/nthu.csv"
+    filename = "data/thu.csv"
     coordinates = np.loadtxt(filename, delimiter=',')
 
     # Params Initial
@@ -65,6 +69,9 @@ def main():
     save_sqlite(payloads)
     # Plot cost function and TSP-route
     plot(sol_best.tolist(), coordinates, costs)
+
+    #export to path.json for google map
+    export2json(filename)
 
 if __name__ == "__main__":
     main()
