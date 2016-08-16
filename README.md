@@ -82,7 +82,10 @@ markov_step = 100 * num_location # 內循環次數
 
 ![image](http://imgur.com/SbLBsmD.gif)
 
-PS.地圖會自動置中，但若要換一個地點跑數據，記得先清DB
+PS.
+- 地圖會自動置中，但若要換一個地點跑數據，記得先清DB
+- 參考[Google Map API 申請教學](https://pgm.readthedocs.io/en/develop/basic-install/google-maps.html)替換掉`index.html` 中 `{YOUR API KEY}`
+- 執行`python -m SimpleHTTPServer` 或者 `python -m http.server`，用瀏覽器開啟`127.0.0.1:8000`，即可看到結果
 
 ## TODO
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
