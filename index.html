@@ -1,0 +1,82 @@
+<style>
+    html,
+    body,
+    #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key={YOUR API KEY}"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<body>
+
+
+    <div id="map-canvas"></div>
+
+
+    <script>
+        window.onload = function() {
+            var request = new XMLHttpRequest();
+            request.open('GET', '/path.json', true);
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+                    var point = {};
+                    point = JSON.parse(request.responseText);
+
+
+                    var lineCoordinatesArray = [];
+                    var markers = [];
+                    var g_point=[0,0];
+
+                    for (var i = 0; i < point.length; i++) {
+                        temp={lat:parseFloat(point[i].lat),lng:parseFloat(point[i].lng)};
+                        g_point[0]=g_point[0]+temp.lat/point.length;
+                        g_point[1]=g_point[1]+temp.lng/point.length;
+                        addMarkerWithTimeout(temp, i * 70);
+                    }
+
+                    map = new google.maps.Map(document.getElementById('map-canvas'), {
+                        zoom: 16,
+                        center: {
+                            lat: g_point[0],
+                            lng: g_point[1],
+                            alt: 100
+                        }
+                    });
+
+                    function addMarkerWithTimeout(position, timeout) {
+                        window.setTimeout(function() {
+                            markers.push(new google.maps.Marker({
+                                position: position,
+                                map: map,
+                                animation: google.maps.Animation.DROP
+                            }));
+
+                            lineCoordinatesArray.push(position);
+                            var lineCoordinatesPath = new google.maps.Polyline({
+                                path: lineCoordinatesArray,
+                                geodesic: true,
+                                strokeColor: '#2E10FF',
+                                strokeOpacity: 1.0,
+                                strokeWeight: 2
+                            });
+                            lineCoordinatesPath.setMap(map);
+
+
+                        }, timeout);
+                    }
+
+
+                }
+            };
+            request.send();
+
+
+        }
+    </script>
+
+</body>

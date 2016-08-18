@@ -11,7 +11,7 @@ TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[[2]]
 在計算複雜度(Computing Complexity)上 屬於NP-Complete的難題
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/2/2b/Bruteforce.gif)
- 
+
 ## What is SA?
 SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.wikipedia.org/wiki/Simulated_annealing) [[4]](http://blog.csdn.net/lalor/article/details/7688329)
 
@@ -20,7 +20,7 @@ SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.
  ![image](https://upload.wikimedia.org/wikipedia/commons/d/d5/Hill_Climbing_with_Simulated_Annealing.gif)
 
 
-## Usage 
+## Usage
 ### Requirement
 
 ```
@@ -72,19 +72,27 @@ markov_step = 100 * num_location # 內循環次數
 
 
 ### Google Map Visualization
+執行完`tsp.py`之後，會根據DB內最短路徑產生路徑檔`path.json`，接著開啟index.html就會看到render到Google Map的結果，如下
 
-附上一張交大校內[Pokemon Stop的最佳路規劃](https://www.google.com/maps/d/edit?mid=1lLYI5pnaxiFfFOcAQ45-Foeg-Jg)
+交大
 
-目前是人工手拉的地圖，希望未來能夠自動整合到地圖上QQ
+![NCTU](http://i.imgur.com/alsiSTZ.gif)
 
- ![image](http://i.imgur.com/GqmAOl3.png)
+東海
+
+![image](http://imgur.com/SbLBsmD.gif)
+
+PS.
+- 地圖會自動置中，但若要換一個地點跑數據，記得先清DB
+- 參考[Google Map API 申請教學](https://pgm.readthedocs.io/en/develop/basic-install/google-maps.html)替換掉`index.html` 中 `{YOUR API KEY}`
+- 執行`python -m SimpleHTTPServer` 或者 `python -m http.server`，用瀏覽器開啟`127.0.0.1:8000`，即可看到結果
 
 ## TODO
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
 - [ ] 考慮雷達半徑(50m)和5分鐘重置的條件，計算出最佳路線
 - [ ] 將最佳路徑Link到Google Map上
 - [ ] Benchmark with other algorithms
-- [ ] Parallelization 
+- [ ] Parallelization
 - [ ] Reannealing
 - [ ] Cooling schedule
 
@@ -94,7 +102,7 @@ markov_step = 100 * num_location # 內循環次數
 
 希望有經驗的大大能夠提出建議！ 謝謝
 
-歡迎PR!! 
+歡迎PR!!
 
 ## Reference
 [1] [Pokemon Go Traveling Salesman Problem](http://www.math.uwaterloo.ca/tsp/poke/index.html) - 國外的Pokemon Go TSP
