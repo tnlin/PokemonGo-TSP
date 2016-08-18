@@ -2,7 +2,6 @@
 import numpy as np
 import json
 from util import *
-from export import *
 
 def main():
     filename = "data/nctu.csv"
