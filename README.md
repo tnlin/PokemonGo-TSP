@@ -90,7 +90,7 @@ PS.
 ## TODO
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
 - [ ] 考慮雷達半徑(50m)和5分鐘重置的條件，計算出最佳路線
-- [+] 將最佳路徑Link到Google Map上
+- [*] 將最佳路徑Link到Google Map上
 - [ ] Benchmark with other algorithms
 - [ ] Parallelization
 - [ ] Reannealing
