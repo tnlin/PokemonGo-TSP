@@ -54,12 +54,12 @@ T = 1					        # 最低溫度
 
 如果想要得到更好的解，增加markov_step是個好辦法
 
-### Cooling Scheduling
-TODO, already implemented 
-
 ```
 markov_step = 100 * num_location # 內循環次數
 ```
+
+### Cooling Scheduling
+TODO, already implemented 
 
 ### Execute
 直接執行`python tsp.py`, 預設會讀取`data/nctu.csv`
