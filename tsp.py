@@ -78,7 +78,9 @@ def main():
         prev_cost_best = cost_best
 
         # Monitor the temperature & cost
-        print("Temperature:", "%.2f°C" % round(T, 2), " Distance:", "%.2fm" % round(cost_best, 2))
+        print("Temperature:", "%.2f°C" % round(T, 2),
+              " Distance:", "%.2fm" % round(cost_best, 2),
+              " Optimization Threshold:", "%d" % cost_best_counter)
 
     # Show final cost & route
     print("Final Distance:", round(costs[-1], 2))
