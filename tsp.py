@@ -13,7 +13,8 @@ def main():
     # Params Initial
     num_location = coordinates.shape[0]
     markov_step = 10 * num_location
-    T_0, T, T_NUM_CYCLE, T_MIN = 100, 100, 1, 1
+    T_0, T, T_MIN = 100, 100, 1
+    T_NUM_CYCLE = 1
 
     # Build distance matrix to accelerate cost computing
     distmat = get_distmat(coordinates)
@@ -59,7 +60,8 @@ def main():
                 sol_new = sol_current.copy()
 
         # Lower the temperature
-        T = T_0 / (1 + math.log(1 + T_NUM_CYCLE))
+        alpha = 1 + math.log(1 + T_NUM_CYCLE)
+        T = T_0 / alpha
         costs.append(cost_best)
 
         # Increment T_NUM_CYCLE
@@ -87,11 +89,12 @@ def main():
 
     # Save the result to sqlite
     save_sqlite(payloads)
-    # Plot cost function and TSP-route
-    plot(sol_best.tolist(), coordinates, costs)
 
     #export to path.json for google map
-    export2json(filename)
+    export2json(filename, sol_best)
+
+    # Plot cost function and TSP-route
+    plot(sol_best.tolist(), coordinates, costs)
 
 if __name__ == "__main__":
     main()
