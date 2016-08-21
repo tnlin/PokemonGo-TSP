@@ -23,16 +23,20 @@ SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.
 ## Usage
 ### Requirement
 
-```
 Linux ( Debian / Ubuntu ):
+```
 apt-get install python-matplotlib
 pip install -r requirements.txt
+```
 
 Linux ( Fedora / Redhat ):
+```
 yum install python-matplotlib
 pip install -r requirements.txt
+```
 
 Mac OSX:
+```
 pip install matplotlib
 pip install -r requirements.txt
 ```
@@ -44,12 +48,14 @@ pip install -r requirements.txt
 markov_step = 10 * num_location	# 內循環次數
 T = 100					        # 初始溫度
 T = 1					        # 最低溫度
-T_ALPHA = 0.99			        # 退溫常數
 ```
 
 因為是隨機搜尋演算法，不一定能保證每次都得到最佳解答
 
 如果想要得到更好的解，增加markov_step是個好辦法
+
+### Cooling Scheduling
+TODO, already implemented 
 
 ```
 markov_step = 100 * num_location # 內循環次數
