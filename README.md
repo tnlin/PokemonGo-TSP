@@ -58,8 +58,8 @@ T = 1					        # 最低溫度
 markov_step = 100 * num_location # 內循環次數
 ```
 
-### Cooling Scheduling
-TODO, already implemented 
+### Cooling Schedules
+冷卻計畫[[7]](http://what-when-how.com/artificial-intelligence/a-comparison-of-cooling-schedules-for-simulated-annealing-artificial-intelligence/)是模擬退火中用來降溫的函數，不同的降溫方式會影響演算法計算結果的速度以及結果的優劣（離最優解多近）
 
 ### Execute
 直接執行`python tsp.py`, 預設會讀取`data/nctu.csv`
@@ -122,3 +122,5 @@ PS.
 [5] [Queen of College Tours](http://www.math.uwaterloo.ca/tsp/college/index.html) - 從Geometric TSP 到 Road TSP
 
 [6] [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) - 地圖掃描工具，開啟後放置一段時間，再把`pogom.db`拿出來，即可取得道館/補給站座標
+
+[7] [A Comparison of Cooling Schedules for Simulated Annealing](http://what-when-how.com/artificial-intelligence/a-comparison-of-cooling-schedules-for-simulated-annealing-artificial-intelligence/) - 不同冷卻計畫的比較
