@@ -4,6 +4,9 @@ import sqlite3
 import json
 from matplotlib.ticker import FormatStrFormatter
 
+def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
+    return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
+
 def export2json(filename):
     conn = sqlite3.connect('data/tsp.db')
     cursor = conn.cursor()

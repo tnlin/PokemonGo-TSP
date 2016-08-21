@@ -1,6 +1,7 @@
 #coding:utf-8
 import numpy as np
 import json
+import math
 from util import *
 
 def main():
@@ -12,7 +13,7 @@ def main():
     # Params Initial
     num_location = coordinates.shape[0]
     markov_step = 10 * num_location
-    T, T_MIN, T_ALPHA  = 100, 1, 0.99
+    T_0, T, T_NUM_CYCLE, T_MIN = 100, 100, 1, 1
 
     # Build distance matrix to accelerate cost computing
     distmat = get_distmat(coordinates)
@@ -24,8 +25,14 @@ def main():
     # Record costs during the process
     costs = []
 
+    # previous cost_best
+    prev_cost_best = cost_best
+
+    # counter for detecting how stable the cost_best currently is
+    cost_best_counter = 0
+
     # Simulated Annealing
-    while T > T_MIN:
+    while T > T_MIN and cost_best_counter < 150:
         for i in np.arange(markov_step):
             # Use three different methods to generate new solution
             # Swap, Reverse, and Transpose
@@ -52,8 +59,22 @@ def main():
                 sol_new = sol_current.copy()
 
         # Lower the temperature
-        T *= T_ALPHA
+        T = T_0 / (1 + math.log(1 + T_NUM_CYCLE))
         costs.append(cost_best)
+
+        # Increment T_NUM_CYCLE
+        T_NUM_CYCLE += 1
+
+        # Detect stability of cost_best
+        if isclose(cost_best, prev_cost_best, abs_tol=1e-12):
+          cost_best_counter += 1
+        else:
+          # Not stable yet, reset
+          cost_best_counter = 0
+
+        # Update prev_cost_best
+        prev_cost_best = cost_best
+
         # Monitor the temperature & cost
         print("Temperature:", "%.2f°C" % round(T, 2), " Distance:", "%.2fm" % round(cost_best, 2))
 
