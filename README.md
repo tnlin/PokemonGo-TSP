@@ -94,13 +94,13 @@ PS.
 - 執行`python -m SimpleHTTPServer` 或者 `python -m http.server`，用瀏覽器開啟`127.0.0.1:8000`，即可看到結果
 
 ## TODO
+- [x] 將最佳路徑Link到Google Map上
+- [x] Cooling schedule
 - [ ] Road TSP (結合Google Map根據實際地理距離來計算)
 - [ ] 考慮雷達半徑(50m)和5分鐘重置的條件，計算出最佳路線
-- [x] 將最佳路徑Link到Google Map上
 - [ ] Benchmark with other algorithms
 - [ ] Parallelization
 - [ ] Reannealing
-- [ ] Cooling schedule
 
 目前只實現了Geometric TSP，Road TSP [[5]](http://www.math.uwaterloo.ca/tsp/college/index.html) 還在克服中
 
