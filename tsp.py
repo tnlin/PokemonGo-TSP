@@ -10,6 +10,10 @@ def main():
     #filename = "data/thu.csv"
     coordinates = np.loadtxt(filename, delimiter=',')
 
+    # Constant Definitions
+    NUM_NEW_SOLUTION_METHODS = 3
+    SWAP, REVERSE, TRANSPOSE = 0, 1, 2
+
     # Params Initial
     num_location = coordinates.shape[0]
     markov_step = 10 * num_location
@@ -37,13 +41,15 @@ def main():
         for i in np.arange(markov_step):
             # Use three different methods to generate new solution
             # Swap, Reverse, and Transpose
-            choice = np.random.randint(3)
-            if choice == 0:
+            choice = np.random.randint(NUM_NEW_SOLUTION_METHODS)
+            if choice == SWAP:
                 sol_new = swap(sol_new)
-            elif choice ==1:
+            elif choice == REVERSE:
                 sol_new = reverse(sol_new)
-            else:
+            elif choice == TRANSPOSE:
                 sol_new = transpose(sol_new)
+            else:
+                print("ERROR: new solution method %d is not defined" % choice)
 
             # Get the total distance of new route
             cost_new = sum_distmat(sol_new, distmat)
@@ -78,7 +84,9 @@ def main():
         prev_cost_best = cost_best
 
         # Monitor the temperature & cost
-        print("Temperature:", "%.2f°C" % round(T, 2), " Distance:", "%.2fm" % round(cost_best, 2))
+        print("Temperature:", "%.2f°C" % round(T, 2),
+              " Distance:", "%.2fm" % round(cost_best, 2),
+              " Optimization Threshold:", "%d" % cost_best_counter)
 
     # Show final cost & route
     print("Final Distance:", round(costs[-1], 2))
