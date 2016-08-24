@@ -27,7 +27,7 @@ def main():
     # Params Initial
     num_location = coordinates.shape[0]
     markov_step = args.markov_coefficient * num_location
-    T_0, T, T_MIN = 100, 100, 1
+    T_0, T, T_MIN = args.init_temperature, args.init_temperature, 1
     T_NUM_CYCLE = 1
 
     # Build distance matrix to accelerate cost computing

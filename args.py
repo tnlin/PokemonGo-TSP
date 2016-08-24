@@ -5,9 +5,10 @@ def parse_args():
 
     # Help messages for each option
     helps = {}
-    helps['data'] = 'Data to calculate TSP'
-    helps['markov'] = 'Coefficient to multiply the number of locations'
-    helps['halt'] = 'Optimization threshold: stability of solution as program halts'
+    helps['data'] = 'Data to calculate TSP. [Default: nctu]'
+    helps['markov'] = 'Coefficient to multiply the number of locations. [Default: 10]'
+    helps['halt'] = 'Optimization threshold: stability of solution as program halts. [Default: 150]'
+    helps['init_temperature'] = 'Initial temperature. [Default: 100]'
 
     arg_parser.add_argument(
         '-d', '--data', 
@@ -29,6 +30,14 @@ def parse_args():
         type=int,
         default=150,
         metavar='THRESHOLD'
+    )
+
+    arg_parser.add_argument(
+        '-t', '--init-temperature',
+        help=helps['init_temperature'],
+        type=int,
+        default=100,
+        metavar='INITIAL_TEMPERATURE'
     )
 
     return arg_parser.parse_args()
