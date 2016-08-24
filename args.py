@@ -11,7 +11,8 @@ def parse_args():
 
     arg_parser.add_argument(
         '-d', '--data', 
-        choices=['nctu', 'nthu', 'thu']
+        choices=['nctu', 'nthu', 'thu'],
+        default='nctu',
         help=helps['data']
     ) 
 
