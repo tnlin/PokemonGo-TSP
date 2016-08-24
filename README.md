@@ -76,6 +76,23 @@ markov_step = 100 * num_location # 內循環次數
 
 等跑完後最後再去sqlite看數據即可
 
+### Execution Options
+
+目前提供了一些命令列參數供大家在執行時比較彈性，可以依據自己的喜好來設定
+
+一般來說想要取得比較優化的結果會比較耗時，而比較省時的運行結果就不會那麼優
+
+目前預設的參數數值皆是經過實驗對比後相較平衡的，不會非常耗時，結果也不錯
+
+`-h, --help 可看命令列參數的幫助解說`
+
+`-d, --data 用來設定數據來源（預設值：nctu）`
+
+`-m, --markov-coefficient 用來設定內循環次數的係數（預設值：10）`
+
+`--halt 用來設定當結果多穩定時程式就可以停止運算（預設值：150）`
+
+`-t, --init-temperature 用來設定初始溫度（預設值：100）`
 
 ### Google Map Visualization
 執行完`tsp.py`之後，會根據DB內最短路徑產生路徑檔`path.json`，接著開啟index.html就會看到render到Google Map的結果，如下
