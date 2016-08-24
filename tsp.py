@@ -3,11 +3,21 @@ import numpy as np
 import json
 import math
 from util import *
+from args import *
 
 def main():
-    filename = "data/nctu.csv"
-    #filename = "data/nthu.csv"
-    #filename = "data/thu.csv"
+    # Get arguments
+    args = parse_args()
+
+    # Use the corresponding data file
+    if args.data == 'nctu':
+        filename = "data/nctu.csv"
+    elif args.data == 'nthu':
+        filename = "data/nthu.csv"
+    elif args.data == 'thu':
+        filename = "data/thu.csv"
+    else:
+        print("ERROR: undefined data")
     coordinates = np.loadtxt(filename, delimiter=',')
 
     # Constant Definitions
@@ -16,7 +26,7 @@ def main():
 
     # Params Initial
     num_location = coordinates.shape[0]
-    markov_step = 10 * num_location
+    markov_step = args.markov_coefficient * num_location
     T_0, T, T_MIN = 100, 100, 1
     T_NUM_CYCLE = 1
 
@@ -37,7 +47,7 @@ def main():
     cost_best_counter = 0
 
     # Simulated Annealing
-    while T > T_MIN and cost_best_counter < 150:
+    while T > T_MIN and cost_best_counter < args.halt:
         for i in np.arange(markov_step):
             # Use three different methods to generate new solution
             # Swap, Reverse, and Transpose
