@@ -88,11 +88,15 @@ markov_step = 100 * num_location # 內循環次數
 
 `-d, --data 用來設定數據來源（預設值：nctu）`
 
+`-f, --file 使用自己的數據檔案來作計算`
+
 `-m, --markov-coefficient 用來設定內循環次數的係數（預設值：10）`
 
 `--halt 用來設定當結果多穩定時程式就可以停止運算（預設值：150）`
 
 `-t, --init-temperature 用來設定初始溫度（預設值：100）`
+
+*附註：如果`-f`和`-d`一起使用，系統將會忽略`-d`*
 
 ### Google Map Visualization
 執行完`tsp.py`之後，會根據DB內最短路徑產生路徑檔`path.json`，接著開啟index.html就會看到render到Google Map的結果，如下
