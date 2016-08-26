@@ -40,4 +40,10 @@ def parse_args():
         metavar='INITIAL_TEMPERATURE'
     )
 
+    arg_parser.add_argument(
+        '-f', '--file',
+        help=helps['file'],
+        metavar='FULL_FILE_PATH'
+    )
+
     return arg_parser.parse_args()
