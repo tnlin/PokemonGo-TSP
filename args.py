@@ -6,6 +6,7 @@ def parse_args():
     # Help messages for each option
     helps = {}
     helps['data'] = 'Data to calculate TSP. [Default: nctu]'
+    helps['file'] = 'Full path of data file.'
     helps['markov'] = 'Coefficient to multiply the number of locations. [Default: 10]'
     helps['halt'] = 'Optimization threshold: stability of solution as program halts. [Default: 150]'
     helps['init_temperature'] = 'Initial temperature. [Default: 100]'
@@ -16,6 +17,12 @@ def parse_args():
         default='nctu',
         help=helps['data']
     ) 
+
+    arg_parser.add_argument(
+        '-f', '--file',
+        help=helps['file'],
+        metavar='FULL_FILE_PATH'
+    )
 
     arg_parser.add_argument(
         '-m', '--markov-coefficient', 
@@ -38,12 +45,6 @@ def parse_args():
         type=int,
         default=100,
         metavar='INITIAL_TEMPERATURE'
-    )
-
-    arg_parser.add_argument(
-        '-f', '--file',
-        help=helps['file'],
-        metavar='FULL_FILE_PATH'
     )
 
     return arg_parser.parse_args()
