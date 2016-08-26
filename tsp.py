@@ -10,14 +10,16 @@ def main():
     args = parse_args()
 
     # Use the corresponding data file
-    if args.data == 'nctu':
+    if args.file:
+        filename = args.file
+    elif args.data == 'nctu':
         filename = "data/nctu.csv"
     elif args.data == 'nthu':
         filename = "data/nthu.csv"
     elif args.data == 'thu':
         filename = "data/thu.csv"
     else:
-        print("ERROR: undefined data")
+        print("ERROR: undefined data file")
     coordinates = np.loadtxt(filename, delimiter=',')
 
     # Constant Definitions
