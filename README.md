@@ -10,7 +10,7 @@ TSP全名Travelling salesman problem，中文翻譯做「旅行商問題」[[2]]
 
 在計算複雜度(Computing Complexity)上 屬於NP-Complete的難題
 
-![image](https://upload.wikimedia.org/wikipedia/commons/2/2b/Bruteforce.gif)
+ ![image](https://upload.wikimedia.org/wikipedia/commons/3/3c/Branchbound.gif)
 
 ## What is SA?
 SA全名Simulated Annealing，中文翻譯做「模擬退火」[[3]](https://en.wikipedia.org/wiki/Simulated_annealing) [[4]](http://blog.csdn.net/lalor/article/details/7688329)
